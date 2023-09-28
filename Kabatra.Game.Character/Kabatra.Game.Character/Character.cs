@@ -1,6 +1,14 @@
 ﻿namespace Kabatra.Game.Character
 {
-    public partial class Character
+    using Abilities;
+
+    public class Character
     {
+        public readonly AbilityScores AbilityScores;
+
+        public Character()
+        {
+            AbilityScores = new AbilityScores();
+        }
     }
 }
