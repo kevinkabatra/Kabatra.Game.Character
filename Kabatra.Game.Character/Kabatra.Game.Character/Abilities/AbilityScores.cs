@@ -42,6 +42,26 @@
         public int Charisma { get; private set; }
 
         /// <summary>
+        ///     Gets ability score from a given ability, used for Ability Checks
+        /// </summary>
+        /// <param name="ability"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public int GetScoreFromAbility(Ability ability)
+        {
+            switch (ability)
+            {
+                case Ability.Strength: return Strength;
+                case Ability.Dexterity: return Dexterity;
+                case Ability.Constitution: return Constitution;
+                case Ability.Intelligence: return Intelligence;
+                case Ability.Wisdom: return Wisdom;
+                case Ability.Charisma: return Charisma;
+                default: throw new NotImplementedException();
+            }
+        }
+
+        /// <summary>
         ///     Set the ability scores for a character, should be called during character construction.
         /// </summary>
         /// <param name="strength"></param>
