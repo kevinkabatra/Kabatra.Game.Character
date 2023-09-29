@@ -6,7 +6,6 @@
 
     public class RacialTraitTests
     {
-        
         [Theory]
         [InlineData(Alignment.Unaligned)]
         [InlineData(Alignment.LawfulGood)]
