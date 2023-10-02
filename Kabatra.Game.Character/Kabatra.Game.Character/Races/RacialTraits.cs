@@ -2,34 +2,32 @@
 {
     using Abilities;
     using Alignments;
+    using Kabatra.Game.Character.Sizes;
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>System Reference Document Page 3</remarks>
     public class RacialTraits
     {
         public readonly AbilityScoreIncrease AbilityScoreIncrease;
         public readonly float Age; // Age is Years.Days
         public Alignment Alignment;
+        public Size Size;
+        public SpaceControlled SpaceControlled;
 
         public RacialTraits(
             AbilityScoreIncrease abilityScoreIncrease,
             float age,
-            Alignment alignment
+            Alignment alignment,
+            Size size
         ) 
         {
             AbilityScoreIncrease = abilityScoreIncrease;
             Age = age;
             Alignment = alignment;
-        }
-    }
-
-    public class AbilityScoreIncrease
-    {
-        public Ability Ability;
-        public int Increase;
-
-        public AbilityScoreIncrease(Ability ability, int increase)
-        {
-            Ability= ability;
-            Increase = increase;
+            Size = size;
+            SpaceControlled = new(ConvertTo.SizeInFeet(Size));
         }
     }
 }
