@@ -3,7 +3,6 @@
     using Kabatra.Game.Character.Abilities;
     using Kabatra.Game.Character.Alignments;
     using Kabatra.Game.Character.Races;
-    using Kabatra.Game.Character.Sizes;
 
     public class RacialTraitTests
     {
@@ -26,58 +25,23 @@
             );
 
             float ExpectedAge = 1.364F;
-            Size ExpectedSize = Size.Medium;
+            float ExpectedHeightInFeet = 6f;
+            float ExpectedWeightInPounds = 200f;
             
-            SpaceControlled ExpectedSpaceControlled = new(ConvertTo.SizeInFeet(ExpectedSize));
-
             RacialTraits racialTrait = new(
                 ExpectedAbilityScoreIncrease,
                 ExpectedAge,
                 ExpectedAlignment,
-                ExpectedSize
+                ExpectedHeightInFeet,
+                ExpectedWeightInPounds
             );
 
             Assert.NotNull(racialTrait);
             Assert.Equal(ExpectedAbilityScoreIncrease, racialTrait.AbilityScoreIncrease);
             Assert.Equal(ExpectedAge, racialTrait.Age);
             Assert.Equal(ExpectedAlignment, racialTrait.Alignment);
-            Assert.Equal(ExpectedSize, racialTrait.Size);
-            Assert.Equal(ExpectedSpaceControlled, racialTrait.SpaceControlled);
-        }
-
-        [Theory]
-        [InlineData(Size.Gargantuan)]
-        [InlineData(Size.Huge)]
-        [InlineData(Size.Large)]
-        [InlineData(Size.Medium)]
-        [InlineData(Size.Small)]
-        [InlineData(Size.Tiny)]
-        public void CanCreateRacialTraitsWithAnySize(Size ExpectedSize)
-        {
-            AbilityScoreIncrease ExpectedAbilityScoreIncrease = new(
-                Ability.Strength,
-                2
-            );
-
-            float ExpectedAge = 1.364F;
-
-            Alignment ExpectedAlignment = Alignment.Unaligned;
-
-            SpaceControlled ExpectedSpaceControlled = new(ConvertTo.SizeInFeet(ExpectedSize));
-
-            RacialTraits racialTrait = new(
-                ExpectedAbilityScoreIncrease,
-                ExpectedAge,
-                ExpectedAlignment,
-                ExpectedSize
-            );
-
-            Assert.NotNull(racialTrait);
-            Assert.Equal(ExpectedAbilityScoreIncrease, racialTrait.AbilityScoreIncrease);
-            Assert.Equal(ExpectedAge, racialTrait.Age);
-            Assert.Equal(ExpectedAlignment, racialTrait.Alignment);
-            Assert.Equal(ExpectedSize, racialTrait.Size);
-            Assert.Equal(ExpectedSpaceControlled, racialTrait.SpaceControlled);
+            Assert.Equal(ExpectedHeightInFeet, racialTrait.HeightInFeet);
+            Assert.Equal(ExpectedWeightInPounds, racialTrait.WeightInPounds);
         }
     }
 }

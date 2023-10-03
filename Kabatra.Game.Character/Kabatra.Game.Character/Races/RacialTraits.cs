@@ -13,21 +13,25 @@
         public readonly AbilityScoreIncrease AbilityScoreIncrease;
         public readonly float Age; // Age is Years.Days
         public Alignment Alignment;
-        public Size Size;
-        public SpaceControlled SpaceControlled;
+        public float HeightInFeet;
+        public float WeightInPounds;
+
+        public Size Size { get; private set; }
 
         public RacialTraits(
             AbilityScoreIncrease abilityScoreIncrease,
             float age,
             Alignment alignment,
-            Size size
+            float heightInFeet,
+            float weightInPounds
         ) 
         {
             AbilityScoreIncrease = abilityScoreIncrease;
             Age = age;
             Alignment = alignment;
-            Size = size;
-            SpaceControlled = new(ConvertTo.SizeInFeet(Size));
+            HeightInFeet = heightInFeet;
+            WeightInPounds= weightInPounds;
+            Size = new(HeightInFeet, WeightInPounds);
         }
     }
 }
