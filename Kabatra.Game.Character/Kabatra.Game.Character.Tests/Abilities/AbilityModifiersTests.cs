@@ -1,5 +1,7 @@
 ﻿namespace Kabatra.Game.Character.Tests.Abilities
 {
+    using Kabatra.Game.Character.Tests.Data;
+
     public class AbilityModifiersTests
     {
         [Theory]
@@ -37,7 +39,8 @@
         [InlineData(31, 10)]
         public void CanGetAbilityModifier(int abilityScore, int expectedAbilityModifier)
         {
-            var character = new Character();
+            GenericCharacter characterCreator = new();
+            var character = characterCreator.Get();
             character.AbilityScores.SetAbilityScores(
                 abilityScore,
                 abilityScore,

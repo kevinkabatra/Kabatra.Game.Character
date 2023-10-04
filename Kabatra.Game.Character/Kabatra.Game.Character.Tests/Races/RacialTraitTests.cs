@@ -3,6 +3,7 @@
     using Kabatra.Game.Character.Abilities;
     using Kabatra.Game.Character.Alignments;
     using Kabatra.Game.Character.Languages;
+    using Kabatra.Game.Character.Tests.Races.Data;
 
     public class RacialTraitTests
     {

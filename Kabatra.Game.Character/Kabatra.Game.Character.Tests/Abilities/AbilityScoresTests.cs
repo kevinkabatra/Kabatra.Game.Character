@@ -1,6 +1,6 @@
 namespace Kabatra.Game.Character.Tests.Abilities
 {
-    using Kabatra.Game.Character;
+    using Kabatra.Game.Character.Tests.Data;
 
     public class AbilityScoresTests
     {
@@ -14,7 +14,8 @@ namespace Kabatra.Game.Character.Tests.Abilities
             var expectedWisdom = 5;
             var expectedCharisma = 6;
 
-            var character = new Character();
+            GenericCharacter characterCreator = new();
+            var character = characterCreator.Get();
             character.AbilityScores.SetAbilityScores(
                 expectedStrength,
                 expectedDexterity,
