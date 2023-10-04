@@ -2,7 +2,7 @@
 {
     using Kabatra.Game.Character.Abilities;
     using Kabatra.Game.Character.Alignments;
-    using Kabatra.Game.Character.Races;
+    using Kabatra.Game.Character.Languages;
 
     public class RacialTraitTests
     {
@@ -27,13 +27,20 @@
             float ExpectedAge = 1.364F;
             float ExpectedHeightInFeet = 6f;
             float ExpectedWeightInPounds = 200f;
-            
-            RacialTraits racialTrait = new(
+            float ExpectedSpeedInFeet = 25f;
+            List<Language> ExpectedLanguages = new()
+            { 
+                Language.Common
+            };
+
+            GenericRace racialTrait = new(
                 ExpectedAbilityScoreIncrease,
                 ExpectedAge,
                 ExpectedAlignment,
                 ExpectedHeightInFeet,
-                ExpectedWeightInPounds
+                ExpectedWeightInPounds,
+                ExpectedSpeedInFeet,
+                ExpectedLanguages
             );
 
             Assert.NotNull(racialTrait);
@@ -42,6 +49,8 @@
             Assert.Equal(ExpectedAlignment, racialTrait.Alignment);
             Assert.Equal(ExpectedHeightInFeet, racialTrait.HeightInFeet);
             Assert.Equal(ExpectedWeightInPounds, racialTrait.WeightInPounds);
+            Assert.Equal(ExpectedSpeedInFeet, racialTrait.SpeedInFeet);
+            Assert.Equal(ExpectedLanguages, racialTrait.Languages);
         }
     }
 }
