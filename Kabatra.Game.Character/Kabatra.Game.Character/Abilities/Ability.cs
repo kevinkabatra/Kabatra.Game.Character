@@ -1,5 +1,6 @@
 ﻿namespace Kabatra.Game.Character.Abilities
 {
+    /// <see cref="AbilityScores"/>
     public enum Ability
     {
         Strength,

@@ -1,5 +1,12 @@
 ﻿namespace Kabatra.Game.Character.Sizes
 {
+    /// <summary>
+    ///     Characters of most races are Medium, a size category including creatures that are roughly 4 to 8 feet tall.
+    /// Members of a few races are Small (between 2 and 4 feet tall), which means that certain rules of the game affect
+    /// them differently. The most important of these rules is that Small characters have trouble wielding heavy weapons,
+    /// as explained in “Equipment.”
+    /// </summary>
+    /// <remarks>System Reference Document Page 3</remarks>
     public class Size
     {
         public float Height { get; private set; }

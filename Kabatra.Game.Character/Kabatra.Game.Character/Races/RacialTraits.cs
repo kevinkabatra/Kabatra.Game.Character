@@ -12,10 +12,23 @@
     public class RacialTraits
     {
         public readonly AbilityScoreIncrease AbilityScoreIncrease;
+
+        /// <summary>
+        ///     The age entry notes the age when a member of the race is considered an adult, as well as the race’s expected
+        /// lifespan. This information can help you decide how old your character is at the start of the game. You can choose
+        /// any age for your character, which could provide an explanation for some of your ability scores. For example, if
+        /// you play a young or very old character, your age could explain a particularly low Strength or Constitution score,
+        /// while advanced age could account for a high Intelligence or Wisdom.
+        /// </summary>
         public readonly float Age; // Age is Years.Days
+        
         public Alignment Alignment;
         public float HeightInFeet;
         public float WeightInPounds;
+
+        /// <summary>
+        ///     Your speed determines how far you can move when traveling ( “Adventuring”) and fighting (“Combat”).
+        /// </summary>
         public float SpeedInFeet;
         public IEnumerable<Language> Languages;
 
