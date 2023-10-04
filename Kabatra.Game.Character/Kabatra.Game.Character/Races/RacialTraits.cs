@@ -14,7 +14,7 @@
         /// <summary>
         ///     Every race increases one or more of a character’s ability scores.
         /// </summary>
-        public readonly AbilityScoreIncrease AbilityScoreIncrease;
+        public readonly IEnumerable<AbilityScoreIncrease> AbilityScoreIncrease;
 
         /// <summary>
         ///     The age entry notes the age when a member of the race is considered an adult, as well as the race’s expected
@@ -57,14 +57,17 @@
         /// </summary>
         public Size Size { get; private set; }
 
+        public string RaceDisplayName { get; private set; }
+
         protected RacialTraits(
-            AbilityScoreIncrease abilityScoreIncrease,
+            IEnumerable<AbilityScoreIncrease> abilityScoreIncrease,
             float age,
             Alignment alignment,
             float heightInFeet,
             float weightInPounds,
             float speedInFeet,
-            IEnumerable<Language> languages
+            IEnumerable<Language> languages,
+            string raceDisplayName
         ) 
         {
             AbilityScoreIncrease = abilityScoreIncrease;
@@ -75,6 +78,7 @@
             Size = new(HeightInFeet, WeightInPounds);
             SpeedInFeet = speedInFeet;
             Languages = languages;
+            RaceDisplayName= raceDisplayName;
         }
     }
 }

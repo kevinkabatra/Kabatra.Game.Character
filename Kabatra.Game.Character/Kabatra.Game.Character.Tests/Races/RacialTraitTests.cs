@@ -20,10 +20,7 @@
         [InlineData(Alignment.ChaoticEvil)]
         public void CanCreateRacialTraitsWithAnyAlignment(Alignment ExpectedAlignment)
         {
-            AbilityScoreIncrease ExpectedAbilityScoreIncrease = new(
-                Ability.Strength,
-                2
-            );
+            List<AbilityScoreIncrease> ExpectedAbilityScoreIncrease = new() { new(Ability.Strength, 2) };
 
             float ExpectedAge = 1.364F;
             float ExpectedHeightInFeet = 6f;

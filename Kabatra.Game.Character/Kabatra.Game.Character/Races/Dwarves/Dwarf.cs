@@ -1,4 +1,4 @@
-﻿namespace Kabatra.Game.Character.Races
+﻿namespace Kabatra.Game.Character.Races.Dwarves
 {
     using Kabatra.Game.Character.Abilities;
     using Kabatra.Game.Character.Alignments;
@@ -30,12 +30,14 @@
     /// <remarks>System Reference Document Page 3</remarks>
     public class Dwarf : RacialTraits
     {
-        private readonly static AbilityScoreIncrease DwarfBaseAbilityScoreIncrease = new(Ability.Constitution, 2);
-        private readonly static float DwarfBaseSpeedInFeet = 25f;
-        private readonly static IEnumerable<Language> DwarfBaseLanguages = new List<Language>(){ Language.Common, Language.Dwarvish };
+        protected readonly static IEnumerable<AbilityScoreIncrease> DwarfBaseAbilityScoreIncrease = new List<AbilityScoreIncrease>() { new(Ability.Constitution, 2) };
+        protected readonly static string DwarfBaseRaceDisplayName = nameof(Dwarf);
 
-        public Dwarf(float age, Alignment alignment, float heightInFeet, float weightInPounds) : 
-            base(DwarfBaseAbilityScoreIncrease, age, alignment, heightInFeet, weightInPounds, DwarfBaseSpeedInFeet, DwarfBaseLanguages)
+        protected readonly static float DwarfBaseSpeedInFeet = 25f;
+        protected readonly static IEnumerable<Language> DwarfBaseLanguages = new List<Language>() { Language.Common, Language.Dwarvish };
+
+        public Dwarf(float age, Alignment alignment, float heightInFeet, float weightInPounds) :
+            base(DwarfBaseAbilityScoreIncrease, age, alignment, heightInFeet, weightInPounds, DwarfBaseSpeedInFeet, DwarfBaseLanguages, DwarfBaseRaceDisplayName)
         {
         }
     }

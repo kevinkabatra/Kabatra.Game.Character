@@ -1,7 +1,7 @@
 ﻿namespace Kabatra.Game.Character.Tests.Races.Data
 {
     using Kabatra.Game.Character.Alignments;
-    using Kabatra.Game.Character.Races;
+    using Kabatra.Game.Character.Races.Dwarves;
 
     public class GenericDwarf
     {
