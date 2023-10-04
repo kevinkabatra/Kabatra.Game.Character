@@ -11,6 +11,9 @@
     /// <remarks>System Reference Document Page 3</remarks>    
     public class RacialTraits
     {
+        /// <summary>
+        ///     Every race increases one or more of a character’s ability scores.
+        /// </summary>
         public readonly AbilityScoreIncrease AbilityScoreIncrease;
 
         /// <summary>
@@ -21,17 +24,37 @@
         /// while advanced age could account for a high Intelligence or Wisdom.
         /// </summary>
         public readonly float Age; // Age is Years.Days
-        
+
+        /// <summary>
+        ///     Most races have tendencies toward certain alignments, described in this entry. These are not binding for player
+        /// characters, but considering why your dwarf is chaotic, for example, in defiance of lawful dwarf society can help you
+        /// better define your character.
+        /// </summary>
         public Alignment Alignment;
+        
+        /// <summary>
+        ///     Height of character in feet, used to determine <c>Size</c>.
+        /// </summary>
         public float HeightInFeet;
+
+        /// <summary>
+        ///     Weight of character in pounds, used to determine <c>Size</c>.
+        /// </summary>
         public float WeightInPounds;
 
         /// <summary>
         ///     Your speed determines how far you can move when traveling ( “Adventuring”) and fighting (“Combat”).
         /// </summary>
         public float SpeedInFeet;
+
+        /// <summary>
+        ///     By virtue of your race, your character can speak, read, and write certain languages.
+        /// </summary>
         public IEnumerable<Language> Languages;
 
+        /// <summary>
+        ///     Size of character, determined by height and weight.
+        /// </summary>
         public Size Size { get; private set; }
 
         protected RacialTraits(

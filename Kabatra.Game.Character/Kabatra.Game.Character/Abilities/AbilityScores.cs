@@ -47,6 +47,21 @@
         /// </summary>
         public int Charisma { get; private set; }
 
+        public AbilityScores() 
+        {
+        }
+
+        public AbilityScores(
+            int strength,
+            int dexterity,
+            int constitution,
+            int intelligence,
+            int wisdom,
+            int charisma)
+        {
+            SetAbilityScores(strength, dexterity, constitution, intelligence, wisdom, charisma);
+        }
+
         /// <summary>
         ///     Gets ability score from a given ability, used for Ability Checks
         /// </summary>
