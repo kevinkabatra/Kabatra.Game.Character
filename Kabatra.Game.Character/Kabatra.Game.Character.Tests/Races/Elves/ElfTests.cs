@@ -2,10 +2,8 @@
 {
     using Kabatra.Game.Character.Abilities;
     using Kabatra.Game.Character.Languages;
-    using Kabatra.Game.Character.Races.Dwarves;
     using Kabatra.Game.Character.Races.Elves;
     using Kabatra.Game.Character.Sizes;
-    using Kabatra.Game.Character.Tests.Races.Data.Dwarves;
     using Kabatra.Game.Character.Tests.Races.Data.Elves;
 
     public class ElfTests
