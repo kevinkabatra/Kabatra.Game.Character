@@ -3,6 +3,8 @@
     using Kabatra.Game.Character.Abilities;
     using Kabatra.Game.Character.Alignments;
 
+    /// <seealso cref="Dwarf"/>
+    /// <remarks>System Reference Document Page 4</remarks>
     public class HillDwarf : Dwarf
     {
         protected new readonly static IEnumerable<AbilityScoreIncrease> DwarfBaseAbilityScoreIncrease = new List<AbilityScoreIncrease>() { 
