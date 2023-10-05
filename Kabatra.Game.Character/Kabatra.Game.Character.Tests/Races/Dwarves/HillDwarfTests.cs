@@ -1,21 +1,26 @@
-﻿namespace Kabatra.Game.Character.Tests.Races
+﻿namespace Kabatra.Game.Character.Tests.Races.Dwarves
 {
+    using Kabatra.Game.Character.Abilities;
     using Kabatra.Game.Character.Languages;
     using Kabatra.Game.Character.Races.Dwarves;
     using Kabatra.Game.Character.Sizes;
-    using Kabatra.Game.Character.Tests.Races.Data;
+    using Kabatra.Game.Character.Tests.Races.Data.Dwarves;
 
-    public class DwarfTests
+    public class HillDwarfTests
     {
         [Fact]
-        public void CanCreateDwarf()
+        public void CanCreateHillDwarf()
         {
-            Dwarf genericDwarf = GenericDwarf.Get();
-            
+            Dwarf genericDwarf = GenericHillDwarf.Get();
+
             float ExpectedSpeedInFeet = 25f;
             SizeCategory ExpectedSizeCategory = SizeCategory.Medium;
-            List<Language> ExpectedLanguages = new() {  Language.Common, Language.Dwarvish };
-
+            List<Language> ExpectedLanguages = new() { Language.Common, Language.Dwarvish };
+            List<AbilityScoreIncrease> ExpectedAbilityScoreIncrease = new() {
+                new(Ability.Constitution, 2),
+                new(Ability.Wisdom, 1),
+            };
+            string ExpectedRaceDisplayName = "Hill Dwarf";
 
             Assert.NotNull(genericDwarf);
             Assert.Equal(GenericDwarf.ExpectedAge, genericDwarf.Age);
@@ -25,6 +30,8 @@
             Assert.Equal(ExpectedSpeedInFeet, genericDwarf.SpeedInFeet);
             Assert.Equal(ExpectedSizeCategory, genericDwarf.Size.SizeCategory);
             Assert.Equal(ExpectedLanguages, genericDwarf.Languages);
+            Assert.Equal(ExpectedAbilityScoreIncrease, genericDwarf.AbilityScoreIncrease);
+            Assert.Equal(ExpectedRaceDisplayName, genericDwarf.RaceDisplayName);
         }
     }
 }

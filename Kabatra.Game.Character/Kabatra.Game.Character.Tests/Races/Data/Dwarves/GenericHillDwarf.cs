@@ -1,4 +1,4 @@
-﻿namespace Kabatra.Game.Character.Tests.Races.Data
+﻿namespace Kabatra.Game.Character.Tests.Races.Data.Dwarves
 {
     using Kabatra.Game.Character.Races.Dwarves;
 

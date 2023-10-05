@@ -54,20 +54,20 @@
     /// <remarks>System Reference Document Page 3</remarks>
     public class Dwarf : RacialTraits
     {
-        protected readonly static IEnumerable<AbilityScoreIncrease> DwarfBaseAbilityScoreIncrease = new List<AbilityScoreIncrease>() { new(Ability.Constitution, 2) };
-        protected readonly static string DwarfBaseRaceDisplayName = nameof(Dwarf);
+        protected readonly static IEnumerable<AbilityScoreIncrease> BaseAbilityScoreIncrease = new List<AbilityScoreIncrease>() { new(Ability.Constitution, 2) };
+        protected readonly static string BaseRaceDisplayName = nameof(Dwarf);
 
-        protected readonly static float DwarfBaseSpeedInFeet = 25f;
-        protected readonly static IEnumerable<Language> DwarfBaseLanguages = new List<Language>() { Language.Common, Language.Dwarvish };
+        protected readonly static float BaseSpeedInFeet = 25f;
+        protected readonly static IEnumerable<Language> BaseLanguages = new List<Language>() { Language.Common, Language.Dwarvish };
 
         protected Dwarf(IEnumerable<AbilityScoreIncrease> overrideAbilityScore, string overrideRaceDisplayName, float age, Alignment alignment, float heightInFeet, float weightInPounds) :
-            base(overrideAbilityScore, age, alignment, heightInFeet, weightInPounds, DwarfBaseSpeedInFeet, DwarfBaseLanguages, overrideRaceDisplayName)
+            base(overrideAbilityScore, age, alignment, heightInFeet, weightInPounds, BaseSpeedInFeet, BaseLanguages, overrideRaceDisplayName)
         {
 
         }
 
         public Dwarf(float age, Alignment alignment, float heightInFeet, float weightInPounds) :
-            base(DwarfBaseAbilityScoreIncrease, age, alignment, heightInFeet, weightInPounds, DwarfBaseSpeedInFeet, DwarfBaseLanguages, DwarfBaseRaceDisplayName)
+            base(BaseAbilityScoreIncrease, age, alignment, heightInFeet, weightInPounds, BaseSpeedInFeet, BaseLanguages, BaseRaceDisplayName)
         {
         }
     }
