@@ -6,7 +6,7 @@
     {
         new public static HillDwarf Get()
         {
-            HillDwarf hillDwarf = new(ExpectedAge, ExpectedAlignment, ExpectedHeightInFeet, ExpectedHeightInFeet);
+            HillDwarf hillDwarf = new(ExpectedAge, ExpectedAlignment, ExpectedHeightInFeet, ExpectedWeightInPounds);
             return hillDwarf;
         }
     }

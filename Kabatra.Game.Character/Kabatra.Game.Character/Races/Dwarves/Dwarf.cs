@@ -36,6 +36,12 @@
         protected readonly static float DwarfBaseSpeedInFeet = 25f;
         protected readonly static IEnumerable<Language> DwarfBaseLanguages = new List<Language>() { Language.Common, Language.Dwarvish };
 
+        protected Dwarf(IEnumerable<AbilityScoreIncrease> overrideAbilityScore, string overrideRaceDisplayName, float age, Alignment alignment, float heightInFeet, float weightInPounds) :
+            base(overrideAbilityScore, age, alignment, heightInFeet, weightInPounds, DwarfBaseSpeedInFeet, DwarfBaseLanguages, overrideRaceDisplayName)
+        {
+
+        }
+
         public Dwarf(float age, Alignment alignment, float heightInFeet, float weightInPounds) :
             base(DwarfBaseAbilityScoreIncrease, age, alignment, heightInFeet, weightInPounds, DwarfBaseSpeedInFeet, DwarfBaseLanguages, DwarfBaseRaceDisplayName)
         {

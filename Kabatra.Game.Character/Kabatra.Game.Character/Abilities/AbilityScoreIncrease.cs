@@ -14,5 +14,36 @@
             Ability = ability;
             Increase = increase;
         }
+
+        /// <summary>
+        ///     Determines whether the specified object is equal to the current object.
+        /// </summary>
+        /// <param name="objectToCompare"></param>
+        /// <returns></returns>
+        public override bool Equals(object? objectToCompare)
+        {
+            //Check for null and compare run-time types.
+            if ((objectToCompare == null) || !GetType().Equals(objectToCompare.GetType()))
+            {
+                return false;
+            }
+            else
+            {
+                AbilityScoreIncrease abilityScoreIncrease = (AbilityScoreIncrease)objectToCompare;
+                return (
+                    Ability == abilityScoreIncrease.Ability
+                    && Increase == abilityScoreIncrease.Increase
+                );
+            }
+        }
+
+        /// <summary>
+        ///     Required when overriding Equals.
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
