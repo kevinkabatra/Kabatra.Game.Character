@@ -52,7 +52,7 @@
     /// </para>
     /// </summary>
     /// <remarks>System Reference Document Page 3</remarks>
-    public class Dwarf : RacialTraits
+    public class Dwarf : Race
     {
         protected readonly static IEnumerable<AbilityScoreIncrease> BaseAbilityScoreIncrease = new List<AbilityScoreIncrease>() { new(Ability.Constitution, 2) };
         protected readonly static string BaseRaceDisplayName = nameof(Dwarf);
@@ -63,7 +63,6 @@
         protected Dwarf(IEnumerable<AbilityScoreIncrease> overrideAbilityScore, string overrideRaceDisplayName, float age, Alignment alignment, float heightInFeet, float weightInPounds) :
             base(overrideAbilityScore, age, alignment, heightInFeet, weightInPounds, BaseSpeedInFeet, BaseLanguages, overrideRaceDisplayName)
         {
-
         }
 
         public Dwarf(float age, Alignment alignment, float heightInFeet, float weightInPounds) :

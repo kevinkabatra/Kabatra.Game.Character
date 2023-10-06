@@ -23,7 +23,8 @@
         };
         protected new readonly static string BaseRaceDisplayName = "Hill Dwarf";
 
-        public HillDwarf(float age, Alignment alignment, float heightInFeet, float weightInPounds) : base(BaseAbilityScoreIncrease, BaseRaceDisplayName, age, alignment, heightInFeet, weightInPounds)
+        public HillDwarf(float age, Alignment alignment, float heightInFeet, float weightInPounds) :
+            base(BaseAbilityScoreIncrease, BaseRaceDisplayName, age, alignment, heightInFeet, weightInPounds)
         {
         }
     }

@@ -9,11 +9,11 @@
     public class Character
     {
         public AbilityScores AbilityScores { get; private set; }
-        public RacialTraits Race { get; private set; }
+        public IRace Race { get; private set; }
 
         public Character(
             AbilityScores abilityScores,
-            RacialTraits race
+            IRace race
         )
         {
             AbilityScores = abilityScores;

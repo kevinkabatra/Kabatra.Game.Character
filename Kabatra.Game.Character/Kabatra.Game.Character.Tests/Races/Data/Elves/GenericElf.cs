@@ -1,19 +1,20 @@
 ﻿namespace Kabatra.Game.Character.Tests.Races.Data.Elves
 {
     using Kabatra.Game.Character.Alignments;
+    using Kabatra.Game.Character.Races;
     using Kabatra.Game.Character.Races.Elves;
 
-    public class GenericElf
+    public class GenericElf : IGenericRaceCreator
     {
-        public static readonly float ExpectedAge = 100F;
-        public static readonly Alignment ExpectedAlignment = Alignment.ChaoticGood;
-        public static readonly float ExpectedHeightInFeet = 6f;
-        public static readonly float ExpectedWeightInPounds = 120f;
+        public float ExpectedAge { get => 100f; }
+        public Alignment ExpectedAlignment { get => Alignment.ChaoticGood; }
+        public float ExpectedHeightInFeet { get => 6f; }
+        public float ExpectedWeightInPounds { get => 120f; }
 
-        public static Elf Get()
+        public virtual IRace Get()
         {
-            Elf dwarf = new(ExpectedAge, ExpectedAlignment, ExpectedHeightInFeet, ExpectedWeightInPounds);
-            return dwarf;
+            Elf character = new(ExpectedAge, ExpectedAlignment, ExpectedHeightInFeet, ExpectedWeightInPounds);
+            return character;
         }
     }
 }

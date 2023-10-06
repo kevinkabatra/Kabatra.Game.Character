@@ -6,32 +6,29 @@
     using Kabatra.Game.Character.Sizes;
     using Kabatra.Game.Character.Tests.Races.Data.Dwarves;
 
-    public class HillDwarfTests
+    public class HillDwarfTests : RaceTests<HillDwarf, GenericHillDwarf>
     {
-        [Fact]
-        public void CanCreateHillDwarf()
-        {
-            Dwarf genericDwarf = GenericHillDwarf.Get();
+        public override float ExpectedSpeedInFeet { get => 25f; }
+        public override SizeCategory ExpectedSizeCategory { get => SizeCategory.Medium; }
 
-            float ExpectedSpeedInFeet = 25f;
-            SizeCategory ExpectedSizeCategory = SizeCategory.Medium;
-            List<Language> ExpectedLanguages = new() { Language.Common, Language.Dwarvish };
-            List<AbilityScoreIncrease> ExpectedAbilityScoreIncrease = new() {
+        public override List<Language> ExpectedLanguages
+        {
+            get => new()
+            {
+                Language.Common,
+                Language.Dwarvish
+            };
+        }
+
+        public override List<AbilityScoreIncrease> ExpectedAbilityScoreIncrease
+        {
+            get => new()
+            {
                 new(Ability.Constitution, 2),
                 new(Ability.Wisdom, 1),
             };
-            string ExpectedRaceDisplayName = "Hill Dwarf";
-
-            Assert.NotNull(genericDwarf);
-            Assert.Equal(GenericDwarf.ExpectedAge, genericDwarf.Age);
-            Assert.Equal(GenericDwarf.ExpectedAlignment, genericDwarf.Alignment);
-            Assert.Equal(GenericDwarf.ExpectedHeightInFeet, genericDwarf.HeightInFeet);
-            Assert.Equal(GenericDwarf.ExpectedWeightInPounds, genericDwarf.WeightInPounds);
-            Assert.Equal(ExpectedSpeedInFeet, genericDwarf.SpeedInFeet);
-            Assert.Equal(ExpectedSizeCategory, genericDwarf.Size.SizeCategory);
-            Assert.Equal(ExpectedLanguages, genericDwarf.Languages);
-            Assert.Equal(ExpectedAbilityScoreIncrease, genericDwarf.AbilityScoreIncrease);
-            Assert.Equal(ExpectedRaceDisplayName, genericDwarf.RaceDisplayName);
         }
+
+        public override string ExpectedRaceDisplayName { get => "Hill Dwarf"; }
     }
 }

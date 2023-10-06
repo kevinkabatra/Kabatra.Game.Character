@@ -31,7 +31,8 @@
 
         protected new readonly static string BaseRaceDisplayName = "High Elf";
 
-        public HighElf(float age, Alignment alignment, float heightInFeet, float weightInPounds) : base(BaseAbilityScoreIncrease, BaseRaceDisplayName, age, alignment, heightInFeet, weightInPounds)
+        public HighElf(float age, Alignment alignment, float heightInFeet, float weightInPounds) :
+            base(BaseAbilityScoreIncrease, BaseRaceDisplayName, age, alignment, heightInFeet, weightInPounds)
         {
         }
     }

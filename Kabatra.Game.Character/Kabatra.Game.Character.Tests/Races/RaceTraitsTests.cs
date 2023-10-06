@@ -5,7 +5,7 @@
     using Kabatra.Game.Character.Languages;
     using Kabatra.Game.Character.Tests.Races.Data;
 
-    public class RacialTraitTests
+    public class RaceTraitsTests
     {
         [Theory]
         [InlineData(Alignment.Unaligned)]

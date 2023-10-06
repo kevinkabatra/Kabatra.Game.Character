@@ -69,6 +69,7 @@
         /// <param name="spaceInFeet"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
+        /// <remarks>System Reference Document Page 92</remarks>
         public bool CheckIsCharacterSqueezed(SizeCategory spaceSize)
         {
             switch (SizeCategory)

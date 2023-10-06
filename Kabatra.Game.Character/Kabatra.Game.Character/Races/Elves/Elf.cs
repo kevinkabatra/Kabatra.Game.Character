@@ -50,7 +50,7 @@
     /// </para>
     /// </summary>
     /// <remarks>System Reference Document Page 4</remarks>
-    public class Elf : RacialTraits
+    public class Elf : Race
     {
         protected readonly static IEnumerable<AbilityScoreIncrease> BaseAbilityScoreIncrease = new List<AbilityScoreIncrease>() { new(Ability.Dexterity, 2) };
         protected readonly static string BaseRaceDisplayName = nameof(Elf);
@@ -61,7 +61,6 @@
         protected Elf(IEnumerable<AbilityScoreIncrease> overrideAbilityScore, string overrideRaceDisplayName, float age, Alignment alignment, float heightInFeet, float weightInPounds) :
             base(overrideAbilityScore, age, alignment, heightInFeet, weightInPounds, BaseSpeedInFeet, BaseLanguages, overrideRaceDisplayName)
         {
-
         }
 
         public Elf(float age, Alignment alignment, float heightInFeet, float weightInPounds) :

@@ -22,7 +22,13 @@
             Charisma
         );
 
-        public readonly RacialTraits ExpectedRace = GenericRace.Get();
+        public readonly IRace ExpectedRace;
+
+        public GenericCharacter()
+        {
+            GenericRaceCreator raceCreator = new();
+            ExpectedRace = raceCreator.Get();
+        }
         
         /// <summary>
         ///     Use intance versus static to avoid race conditions within tests.

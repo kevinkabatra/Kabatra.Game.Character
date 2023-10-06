@@ -6,30 +6,26 @@
     using Kabatra.Game.Character.Sizes;
     using Kabatra.Game.Character.Tests.Races.Data.Elves;
 
-    public class ElfTests
+    public class ElfTests : RaceTests<Elf, GenericElf>
     {
-        [Fact]
-        public void CanCreateElf()
-        {
-            Elf genericElf = GenericElf.Get();
+        public override float ExpectedSpeedInFeet { get => 30f; }
+        public override SizeCategory ExpectedSizeCategory { get => SizeCategory.Medium; }
 
-            float ExpectedSpeedInFeet = 30f;
-            SizeCategory ExpectedSizeCategory = SizeCategory.Medium;
-            List<Language> ExpectedLanguages = new() { Language.Common, Language.Elvish };
-            List<AbilityScoreIncrease> ExpectedAbilityScoreIncrease = new() {
+        public override List<Language> ExpectedLanguages
+        {
+            get => new()
+            {
+                Language.Common,
+                Language.Elvish
+            };
+        }
+
+        public override List<AbilityScoreIncrease> ExpectedAbilityScoreIncrease
+        {
+            get => new()
+            {
                 new(Ability.Dexterity, 2),
             };
-
-            Assert.NotNull(genericElf);
-            Assert.Equal(GenericElf.ExpectedAge, genericElf.Age);
-            Assert.Equal(GenericElf.ExpectedAlignment, genericElf.Alignment);
-            Assert.Equal(GenericElf.ExpectedHeightInFeet, genericElf.HeightInFeet);
-            Assert.Equal(GenericElf.ExpectedWeightInPounds, genericElf.WeightInPounds);
-            Assert.Equal(ExpectedSpeedInFeet, genericElf.SpeedInFeet);
-            Assert.Equal(ExpectedSizeCategory, genericElf.Size.SizeCategory);
-            Assert.Equal(ExpectedLanguages, genericElf.Languages);
-            Assert.Equal(ExpectedAbilityScoreIncrease, genericElf.AbilityScoreIncrease);
-            Assert.Equal(nameof(Elf), genericElf.RaceDisplayName);
         }
     }
 }

@@ -1,19 +1,20 @@
 ﻿namespace Kabatra.Game.Character.Tests.Races.Data.Dwarves
 {
     using Kabatra.Game.Character.Alignments;
+    using Kabatra.Game.Character.Races;
     using Kabatra.Game.Character.Races.Dwarves;
 
-    public class GenericDwarf
+    public class GenericDwarf : IGenericRaceCreator
     {
-        public static readonly float ExpectedAge = 100F;
-        public static readonly Alignment ExpectedAlignment = Alignment.LawfulGood;
-        public static readonly float ExpectedHeightInFeet = 4.5f;
-        public static readonly float ExpectedWeightInPounds = 200f;
+        public float ExpectedAge { get => 100f; }
+        public Alignment ExpectedAlignment { get => Alignment.LawfulGood; }
+        public float ExpectedHeightInFeet { get => 4.5f; }
+        public float ExpectedWeightInPounds { get => 200f; }
 
-        public static Dwarf Get()
+        public virtual IRace Get()
         {
-            Dwarf dwarf = new(ExpectedAge, ExpectedAlignment, ExpectedHeightInFeet, ExpectedWeightInPounds);
-            return dwarf;
+            Dwarf character = new(ExpectedAge, ExpectedAlignment, ExpectedHeightInFeet, ExpectedWeightInPounds);
+            return character;
         }
     }
 }

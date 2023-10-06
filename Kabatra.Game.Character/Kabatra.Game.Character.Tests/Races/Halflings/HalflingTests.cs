@@ -1,22 +1,22 @@
-﻿namespace Kabatra.Game.Character.Tests.Races.Dwarves
+﻿namespace Kabatra.Game.Character.Tests.Races.Halflings
 {
     using Kabatra.Game.Character.Abilities;
     using Kabatra.Game.Character.Languages;
-    using Kabatra.Game.Character.Races.Dwarves;
+    using Kabatra.Game.Character.Races.Halflings;
     using Kabatra.Game.Character.Sizes;
-    using Kabatra.Game.Character.Tests.Races.Data.Dwarves;
+    using Kabatra.Game.Character.Tests.Races.Data.Halflings;
 
-    public class DwarfTests : RaceTests<Dwarf, GenericDwarf>
+    public class HalflingTests : RaceTests<Halfling, GenericHalfling>
     {
         public override float ExpectedSpeedInFeet { get => 25f; }
-        public override SizeCategory ExpectedSizeCategory { get => SizeCategory.Medium; }
+        public override SizeCategory ExpectedSizeCategory { get => SizeCategory.Small; }
 
         public override List<Language> ExpectedLanguages
         {
             get => new()
             {
                 Language.Common,
-                Language.Dwarvish
+                Language.Halfling
             };
         }
 
@@ -24,7 +24,7 @@
         {
             get => new()
             {
-                new(Ability.Constitution, 2),
+                new(Ability.Dexterity, 2),
             };
         }
     }

@@ -1,13 +1,14 @@
 ﻿namespace Kabatra.Game.Character.Tests.Races.Data.Dwarves
 {
+    using Kabatra.Game.Character.Races;
     using Kabatra.Game.Character.Races.Dwarves;
 
     public class GenericHillDwarf : GenericDwarf
     {
-        new public static HillDwarf Get()
+        public override IRace Get()
         {
-            HillDwarf hillDwarf = new(ExpectedAge, ExpectedAlignment, ExpectedHeightInFeet, ExpectedWeightInPounds);
-            return hillDwarf;
+            HillDwarf character = new(ExpectedAge, ExpectedAlignment, ExpectedHeightInFeet, ExpectedWeightInPounds);
+            return character;
         }
     }
 }
